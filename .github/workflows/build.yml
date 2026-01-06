@@ -7,9 +7,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-      - name: Capture info
-        run: dotnet --info
       - name: Install WASM
         run: dotnet workload install wasm-tools
+      - name: Capture info
+        run: dotnet --info
       - name: Publish
         run: dotnet publish dotnet-blazor-build-error.csproj -c Release --output publish
