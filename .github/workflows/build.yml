@@ -1,0 +1,13 @@
+name: Demo pipeline
+on: [push]
+jobs:
+  dotnet-build:
+    runs-on: ubuntu-latest
+    container: mcr.microsoft.com/dotnet/sdk:10.0-noble
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Install WASM
+        run: dotnet workload install wasm-tools
+      - name: Publish
+        run: dotnet publish dotnet-restore-error.csproj -c Release --output publish
