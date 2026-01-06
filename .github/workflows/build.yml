@@ -10,4 +10,4 @@ jobs:
       - name: Install WASM
         run: dotnet workload install wasm-tools
       - name: Publish
-        run: dotnet publish dotnet-restore-error.csproj -c Release --output publish
+        run: dotnet publish dotnet-blazor-build-error.csproj -c Release --output publish
